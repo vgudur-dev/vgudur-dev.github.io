@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Gudur - Portfolio</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLZWTW383X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BLZWTW383X');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 1px 20px rgba(30, 41, 59, 0.08);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #1e293b;
+        }
+
+        .nav-links a.active {
+            color: #1e293b;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #f8fafc;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 200;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #64748b;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stat {
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .hero .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #999;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .hero .scroll-indicator::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 3rem;
+            background: #ddd;
+            margin: 1rem auto 0;
+            animation: scroll-line 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll-line {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 200;
+            margin-bottom: 4rem;
+            color: #1e293b;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 4rem;
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .about {
+            background: #fff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 300px;
+            height: 400px;
+            background: #f5f5f5;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image {
+            background-image: url('headshot.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ai-risk-summit-image {
+            background-image: url('AIRiskSummit.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ai-risk-summit-image::before {
+            display: none;
+        }
+
+        /* Override for AI Risk Summit image */
+        .speaking-item:first-child .speaking-image::before {
+            display: none !important;
+            content: none !important;
+        }
+
+        /* Enhanced Book Chapters Section */
+        .publishers-highlight {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .publisher-badge {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+        .publisher-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+        }
+
+        .publisher-name {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .publisher-count {
+            display: block;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .chapter-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(30, 41, 59, 0.05);
+        }
+
+        .chapter-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .chapter-content {
+            padding: 2.5rem;
+        }
+
+        .chapter-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-status {
+            font-size: 0.8rem;
+            color: #fff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .chapter-item:first-child .chapter-status {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .chapter-item:nth-child(2) .chapter-status {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+
+        .chapter-item:nth-child(3) .chapter-status {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .chapter-year {
+            font-size: 0.8rem;
+            color: #999;
+            font-weight: 500;
+        }
+
+        .chapter-item h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #1e293b;
+            line-height: 1.3;
+        }
+
+        .chapter-book {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .chapter-publisher {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chapter-item p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chapter-tag {
+            font-size: 0.8rem;
+            color: #666;
+            background: #f8f9fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+
+        .chapter-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .chapter-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .chapter-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+
+        .chapter-link:hover::after {
+            width: 100%;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #fff;
+            padding: 4rem 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 2rem 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 200;
+            color: #1e293b;
+            margin-bottom: 0.8rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Enhanced Academic Service Section */
+        .service-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0 4rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-radius: 8px;
+            color: white;
+        }
+
+        .service-stat {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .service-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 200;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .service-stat .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .review-category {
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .review-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: #dee2e6;
+        }
+
+        .review-category h3 {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .review-list {
+            padding: 1.5rem;
+        }
+
+        .review-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .review-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .review-venue {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.2rem;
+        }
+
+        .review-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .about-text {
+            padding-top: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .academic-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .academic-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .academic-link:hover {
+            color: #1a1a1a;
+            border-color: #1a1a1a;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #fafafa;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .skill-category {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #e0e0e0;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: #666;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .skill-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #ddd;
+        }
+
+        /* Research Section */
+        .research {
+            background: #fff;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .research-item {
+            background: #fafafa;
+            border-radius: 2px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .research-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #e0e0e0;
+        }
+
+        .research-content {
+            padding: 2.5rem;
+        }
+
+        .research-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-status {
+            font-size: 0.8rem;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Published status - green */
+        .research-item:nth-child(1) .research-status,
+        .research-item:nth-child(2) .research-status {
+            background: #4ecdc4;
+        }
+
+        /* Accepted status - blue */
+        .research-item:nth-child(3) .research-status,
+        .research-item:nth-child(4) .research-status {
+            background: #3b82f6;
+        }
+
+        /* Future work status - gray */
+        .research-item:nth-child(5) .research-status {
+            background: #999;
+        }
+
+        .research-placeholder {
+            border-style: dashed;
+            border-color: #ddd;
+            background: #f9f9f9;
+        }
+
+        .research-placeholder:hover {
+            border-color: #ccc;
+            background: #f5f5f5;
+        }
+
+        .research-placeholder h3 {
+            color: #666;
+        }
+
+        .research-placeholder .research-venue {
+            color: #999;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .research-year {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .research-item h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        .research-venue {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .research-item p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-tag {
+            font-size: 0.8rem;
+            color: #666;
+            background: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .research-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .research-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .research-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+
+        .research-link:hover::after {
+            width: 100%;
+        }
+        .speaking {
+            background: #fafafa;
+        }
+
+        .speaking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .speaking-item {
+            background: #fff;
+            border-radius: 2px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .speaking-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #e0e0e0;
+        }
+
+        .speaking-image {
+            width: 100%;
+            height: 200px;
+            background: #f8f8f8;
+            position: relative;
+        }
+
+        .speaking-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #eee;
+            border-radius: 50%;
+        }
+
+        .speaking-content {
+            padding: 2rem;
+        }
+
+        .speaking-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .speaking-type {
+            font-size: 0.8rem;
+            color: #666;
+            background: #f5f5f5;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .speaking-date {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .speaking-item h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .speaking-title {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .speaking-item p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .speaking-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .speaking-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .speaking-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+
+        .speaking-link:hover::after {
+            width: 100%;
+        }
+        /* Projects Section */
+        .projects {
+            background: #fff;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .project {
+            group: project;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: #f8f8f8;
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: #eee;
+            border-radius: 2px;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-number {
+            font-size: 0.8rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project-year {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .project p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .project-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .project-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+
+        .project-link:hover::after {
+            width: 100%;
+        }
+
+        /* Photography Section */
+        .photography {
+            background: #fafafa;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .photo-item {
+            aspect-ratio: 4/3;
+            background: #f5f5f5;
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #e0e0e0;
+            border-radius: 50%;
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-location {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Blog Section */
+        .blog {
+            background: #fff;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .blog-post {
+            background: #fafafa;
+            border-radius: 2px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #e0e0e0;
+        }
+
+        .blog-content {
+            padding: 2.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-date {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-category {
+            font-size: 0.8rem;
+            color: #666;
+            background: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .blog-post h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        .blog-post p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .blog-link::after {
+            content: ' →';
+            transition: all 0.3s ease;
+        }
+
+        .blog-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+            text-align: left;
+        }
+
+        .contact-item h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .contact-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 3rem 0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 5rem 0;
+            }
+
+            .projects-grid,
+            .blog-grid,
+            .photo-grid,
+            .speaking-grid,
+            .research-grid,
+            .chapters-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .academic-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cursor */
+        .cursor {
+            width: 8px;
+            height: 8px;
+            background: #3b82f6;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor.hover {
+            transform: scale(3);
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Vaishnavi Gudur</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#chapters" class="nav-link">Books</a></li>
+                <li><a href="#reviews" class="nav-link">Service</a></li>
+                <li><a href="#speaking" class="nav-link">Speaking</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Senior Software Engineer</h1>
+            <p class="subtitle">AI Frontier Ambassador transforming software engineering through responsible innovation at global scale</p>
+            
+            <div class="hero-stats fade-in">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">145M+</div>
+                    <div class="hero-stat-label">Users Protected</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">6+</div>
+                    <div class="hero-stat-label">Academic Publications</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">19+</div>
+                    <div class="hero-stat-label">Academic Service</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">40%</div>
+                    <div class="hero-stat-label">Bias Reduction</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView()">
+            Scroll
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image fade-in"></div>
+                <div class="about-text fade-in">
+                    <h2 class="section-title">About</h2>
+                    <p>I'm a Senior Software Engineer at Microsoft with over 7 years of experience designing and delivering secure, scalable web applications across the entire technology stack. Currently, I architect and implement solutions for Microsoft Teams that safeguard 145M+ global users.</p>
+                    <p>My expertise spans frontend frameworks like React and Angular, backend services with GraphQL and REST APIs, and cloud platforms including AWS and Azure. I'm passionate about building intuitive user interfaces, leading cross-functional teams, and mentoring the next generation of engineers.</p>
+                    <p>As an active researcher and AI Frontier Ambassador, I contribute to the academic community through peer-reviewed publications, book chapters in leading volumes from Springer Nature, Wiley, and IGI Global, and extensive academic service including program committee memberships for AIES, BDAA, and ICAIC, advisory committee roles, and publication committee chair positions. I also serve as a judge for prestigious competitions including Globee Awards, university showcases, and cutting-edge hackathons. My research spans AI-driven software engineering, autonomous cybersecurity systems, and ethical AI frameworks with practical applications in enterprise environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Technical Expertise</h2>
+            <p class="section-subtitle fade-in">Comprehensive skills spanning full-stack development, AI research, and ethical technology leadership as an AI Frontier Ambassador.</p>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>AI & Cybersecurity Research</h3>
+                    <ul class="skill-list">
+                        <li>Generative AI & Reinforcement Learning</li>
+                        <li>Edge AI & IoT Security</li>
+                        <li>Agentic AI & Autonomous Systems</li>
+                        <li>Self-Healing Cybersecurity Platforms</li>
+                        <li>Advanced Threat Response & Resilience</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Full-Stack Engineering</h3>
+                    <ul class="skill-list">
+                        <li>React & TypeScript</li>
+                        <li>Java, C#, Python</li>
+                        <li>GraphQL & REST APIs</li>
+                        <li>Microservices & Distributed Systems</li>
+                        <li>AWS & Azure Cloud Platforms</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Leadership & Academic Service</h3>
+                    <ul class="skill-list">
+                        <li>AI Frontier Ambassador</li>
+                        <li>Program & Advisory Committee Member</li>
+                        <li>Publication Committee Chair</li>
+                        <li>Competition & Award Judging</li>
+                        <li>Peer Review for Top-Tier Conferences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title fade-in">Research & Publications</h2>
+            <p class="section-subtitle fade-in">Contributing original research through peer-reviewed conference papers and journal publications in software engineering, AI, and cybersecurity domains.</p>
+            <div class="research-grid">
+                <div class="research-item fade-in">
+                    <div class="research-content">
+                        <div class="research-meta">
+                            <span class="research-status">Published</span>
+                            <span class="research-year">2024</span>
+                        </div>
+                        <h3>AI Driven Self-Healing Cybersecurity Systems with Agentic AI for Adaptive Threat Response and Resilience</h3>
+                        <p class="research-venue">IEEE Cloud Summit</p>
+                        <p>Published research paper on autonomous cybersecurity systems that leverage agentic AI for real-time threat detection and self-healing capabilities. The work explores adaptive response mechanisms and resilience frameworks for next-generation security infrastructure in cloud environments.</p>
+                        <div class="research-tags">
+                            <span class="research-tag">Cybersecurity</span>
+                            <span class="research-tag">Agentic AI</span>
+                            <span class="research-tag">Self-Healing Systems</span>
+                            <span class="research-tag">Cloud Security</span>
+                        </div>
+                        <div class="research-links">
+                            <a href="https://www.researchgate.net/publication/392663570_AI_Driven_Self-Healing_Cybersecurity_Systems_with_Agentic_AI_for_Adaptive_Threat_Response_and_Resilience" class="research-link">View Paper</a>
+                            <a href="#" class="research-link">IEEE Proceedings</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-item fade-in">
+                    <div class="research-content">
+                        <div class="research-meta">
+                            <span class="research-status">Published</span>
+                            <span class="research-year">2024</span>
+                        </div>
+                        <h3>Predictive Modelling of Crime Dataset Using Data Mining</h3>
+                        <p class="research-venue">International Journal of Data Mining & Knowledge Management Process</p>
+                        <p>Published research paper on predictive modeling techniques for crime datasets using advanced data mining approaches. The work explores machine learning algorithms and statistical methods for crime pattern analysis and prediction, contributing to law enforcement and public safety applications.</p>
+                        <div class="research-tags">
+                            <span class="research-tag">Data Mining</span>
+                            <span class="research-tag">Predictive Modeling</span>
+                            <span class="research-tag">Crime Analysis</span>
+                            <span class="research-tag">Machine Learning</span>
+                        </div>
+                        <div class="research-links">
+                            <a href="https://www.researchgate.net/publication/394517928_PREDICTIVE_MODELLING_OF_CRIME_DATASET_USING_DATA_MINING" class="research-link">View Paper</a>
+                            <a href="#" class="research-link">Journal Info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-item fade-in">
+                    <div class="research-content">
+                        <div class="research-meta">
+                            <span class="research-status">Accepted</span>
+                            <span class="research-year">2025</span>
+                        </div>
+                        <h3>Hybrid Taint Analysis for React</h3>
+                        <p class="research-venue">34th International Conference on Software Engineering and Data Engineering (SEDE)</p>
+                        <p>Accepted research paper presenting novel hybrid taint analysis techniques specifically designed for React applications. This work addresses critical security vulnerabilities in modern web frameworks through innovative static and dynamic analysis approaches.</p>
+                        <div class="research-tags">
+                            <span class="research-tag">Security</span>
+                            <span class="research-tag">React</span>
+                            <span class="research-tag">Taint Analysis</span>
+                            <span class="research-tag">Web Security</span>
+                        </div>
+                        <div class="research-links">
+                            <a href="#" class="research-link">Conference</a>
+                            <a href="#" class="research-link">Abstract</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-item fade-in">
+                    <div class="research-content">
+                        <div class="research-meta">
+                            <span class="research-status">Accepted</span>
+                            <span class="research-year">2026</span>
+                        </div>
+                        <h3>Leveraging Generative AI and Reinforcement Learning for Autonomous Cyber Threat Mitigation</h3>
+                        <p class="research-venue">International Conference on Artificial Intelligence and Computing (ICAIC) 2026</p>
+                        <p>Accepted research paper exploring the integration of generative AI and reinforcement learning for autonomous cybersecurity defense systems. The work investigates how advanced AI techniques can create adaptive, learning-based threat mitigation strategies that evolve in real-time to counter emerging cyber threats.</p>
+                        <div class="research-tags">
+                            <span class="research-tag">Generative AI</span>
+                            <span class="research-tag">Reinforcement Learning</span>
+                            <span class="research-tag">Autonomous Security</span>
+                            <span class="research-tag">Threat Mitigation</span>
+                        </div>
+                        <div class="research-links">
+                            <a href="#" class="research-link">Conference Info</a>
+                            <a href="#" class="research-link">Paper Status</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="research-item fade-in">
+                    <div class="research-content">
+                        <div class="research-meta">
+                            <span class="research-status">Accepted</span>
+                            <span class="research-year">2025</span>
+                        </div>
+                        <h3>Deep Learning Embeddings for Zero-Day Cyber Threat Detection: A Multi-Modal Framework for Network Flow and SIEM Data Analysis</h3>
+                        <p class="research-venue">CSNet 2025 Conference</p>
+                        <p>Accepted research paper presenting a novel multi-modal framework that leverages deep learning embeddings for zero-day cyber threat detection. The work combines network flow analysis and SIEM data processing to create robust threat detection systems capable of identifying previously unseen cyber attacks through advanced machine learning techniques.</p>
+                        <div class="research-tags">
+                            <span class="research-tag">Deep Learning</span>
+                            <span class="research-tag">Zero-Day Detection</span>
+                            <span class="research-tag">Multi-Modal Analysis</span>
+                            <span class="research-tag">SIEM Integration</span>
+                        </div>
+                        <div class="research-links">
+                            <a href="#" class="research-link">Conference Info</a>
+                            <a href="#" class="research-link">Paper Status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Chapters Section -->
+    <section id="chapters" class="chapters">
+        <div class="container">
+            <h2 class="section-title fade-in">Book Chapters & Publications</h2>
+            <p class="section-subtitle fade-in">Contributing to leading academic publications from prestigious publishers including <strong>Springer Nature</strong>, <strong>Wiley Publications</strong>, and <strong>IGI Global</strong> on cloud computing, AI security, and automated software engineering.</p>
+            
+            <div class="publishers-highlight fade-in">
+                <div class="publisher-badge">
+                    <span class="publisher-name">Springer Nature</span>
+                    <span class="publisher-count">2 Chapters</span>
+                </div>
+                <div class="publisher-badge">
+                    <span class="publisher-name">Wiley Publications</span>
+                    <span class="publisher-count">1 Chapter</span>
+                </div>
+                <div class="publisher-badge">
+                    <span class="publisher-name">IGI Global</span>
+                    <span class="publisher-count">1 Chapter</span>
+                </div>
+            </div>
+            
+            <div class="chapters-grid">
+                <div class="chapter-item fade-in">
+                    <div class="chapter-content">
+                        <div class="chapter-meta">
+                            <span class="chapter-status">In Press</span>
+                            <span class="chapter-year">2025</span>
+                        </div>
+                        <h3>AI for Compliance in Cloud Environments</h3>
+                        <p class="chapter-book">Revolutionizing the Cloud: Generative AI, Security, and Sustainability</p>
+                        <p class="chapter-publisher">Springer Nature</p>
+                        <p>Comprehensive chapter exploring AI-driven compliance solutions for cloud infrastructure, focusing on automated compliance monitoring, policy enforcement, and regulatory alignment in multi-tenant environments.</p>
+                        <div class="chapter-tags">
+                            <span class="chapter-tag">Cloud Compliance</span>
+                            <span class="chapter-tag">AI Governance</span>
+                            <span class="chapter-tag">Regulatory Technology</span>
+                        </div>
+                        <div class="chapter-links">
+                            <a href="#" class="chapter-link">Springer</a>
+                            <a href="#" class="chapter-link">Book Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter-item fade-in">
+                    <div class="chapter-content">
+                        <div class="chapter-meta">
+                            <span class="chapter-status">Pre-Publishing</span>
+                            <span class="chapter-year">2025</span>
+                        </div>
+                        <h3>Security and Compliance in Cloud-Native Applications</h3>
+                        <p class="chapter-book">Next-Generation Technologies in Cloud Computing: From AI and Security to Sustainability</p>
+                        <p class="chapter-publisher">Wiley Publications</p>
+                        <p>In-depth analysis of security frameworks and compliance strategies specifically designed for cloud-native application architectures, covering container security, microservices governance, and DevSecOps integration.</p>
+                        <div class="chapter-tags">
+                            <span class="chapter-tag">Cloud-Native Security</span>
+                            <span class="chapter-tag">DevSecOps</span>
+                            <span class="chapter-tag">Container Security</span>
+                        </div>
+                        <div class="chapter-links">
+                            <a href="#" class="chapter-link">Wiley</a>
+                            <a href="#" class="chapter-link">Chapter Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter-item fade-in">
+                    <div class="chapter-content">
+                        <div class="chapter-meta">
+                            <span class="chapter-status">In Progress</span>
+                            <span class="chapter-year">2025</span>
+                        </div>
+                        <h3>Beyond the Algorithm: Ethical and Legal Frontiers in Automated Defect Detection</h3>
+                        <p class="chapter-book">Automating Software Defect Detection Through Machine Learning and LLMs</p>
+                        <p class="chapter-publisher">IGI Global</p>
+                        <p>Exploring the ethical implications and legal considerations of AI-driven software defect detection, addressing bias, accountability, transparency, and the human-AI collaboration in quality assurance processes.</p>
+                        <div class="chapter-tags">
+                            <span class="chapter-tag">AI Ethics</span>
+                            <span class="chapter-tag">Legal Frameworks</span>
+                            <span class="chapter-tag">Automated Testing</span>
+                        </div>
+                        <div class="chapter-links">
+                            <a href="#" class="chapter-link">IGI Global</a>
+                            <a href="#" class="chapter-link">Progress Update</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter-item fade-in">
+                    <div class="chapter-content">
+                        <div class="chapter-meta">
+                            <span class="chapter-status">In Progress</span>
+                            <span class="chapter-year">2025</span>
+                        </div>
+                        <h3>Trustworthy AI Systems – Engineering Secure, Scalable, and Responsible Intelligence for Real Applications</h3>
+                        <p class="chapter-book">Lead Editor</p>
+                        <p class="chapter-publisher">Springer Nature</p>
+                        <p>Leading the editorial direction for this comprehensive volume on trustworthy AI systems, focusing on engineering secure, scalable, and responsible intelligence solutions for real-world applications. The book will cover cutting-edge research and practical implementations in AI security, ethics, and responsible development.</p>
+                        <div class="chapter-tags">
+                            <span class="chapter-tag">Lead Editor</span>
+                            <span class="chapter-tag">Trustworthy AI</span>
+                            <span class="chapter-tag">AI Security</span>
+                            <span class="chapter-tag">Responsible AI</span>
+                        </div>
+                        <div class="chapter-links">
+                            <a href="#" class="chapter-link">Springer Nature</a>
+                            <a href="#" class="chapter-link">Progress Update</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter-item fade-in chapter-placeholder">
+                    <div class="chapter-content">
+                        <div class="chapter-meta">
+                            <span class="chapter-status">Future</span>
+                            <span class="chapter-year">2025+</span>
+                        </div>
+                        <h3>Future Book Contributions</h3>
+                        <p class="chapter-book">Space for upcoming book chapters and editorial contributions</p>
+                        <p class="chapter-publisher">Leading Academic Publishers</p>
+                        <p>Additional book chapters and academic publications currently under consideration. Space reserved for future contributions to edited volumes and collaborative works.</p>
+                        <div class="chapter-tags">
+                            <span class="chapter-tag">AI</span>
+                            <span class="chapter-tag">Security</span>
+                            <span class="chapter-tag">Cloud Computing</span>
+                        </div>
+                        <div class="chapter-links">
+                            <a href="#" class="chapter-link">Coming Soon</a>
+                            <a href="#contact" class="chapter-link">Collaborate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Service Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title fade-in">Academic Service & Judging</h2>
+            <p class="section-subtitle fade-in">Contributing to the academic and professional community through peer review, program committee memberships, editorial activities, publication committee chair roles, and judging prestigious competitions and showcases.</p>
+            
+            <div class="service-summary fade-in">
+                <div class="service-stat">
+                    <div class="stat-number">19+</div>
+                    <div class="stat-label">Academic Service Roles</div>
+                </div>
+                <div class="service-stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Program Committees</div>
+                </div>
+                <div class="service-stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Advisory Committees</div>
+                </div>
+                <div class="service-stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Judging Panels</div>
+                </div>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-category fade-in">
+                    <h3>AI & Ethics Peer Review</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-venue">AIES 2025</div>
+                            <div class="review-description">AAAI/ACM Conference on AI, Ethics, and Society - Peer Reviewer</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">NeurIPS Ethics</div>
+                            <div class="review-description">Neural Information Processing Systems - Ethics Track - Peer Reviewer</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">DynaFront NeurIPS</div>
+                            <div class="review-description">NeurIPS Workshop - Peer Reviewer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-category fade-in">
+                    <h3>Software Engineering Peer Review</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-venue">ICSE Review</div>
+                            <div class="review-description">International Conference on Software Engineering - Peer Reviewer</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">ICIS 2025</div>
+                            <div class="review-description">International Conference on Information Systems - Peer Reviewer</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">IGI Global</div>
+                            <div class="review-description">Book Chapter - Peer Reviewer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-category fade-in">
+                    <h3>Emerging Technologies Peer Review</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-venue">IEEE RAS 2025</div>
+                            <div class="review-description">IEEE Robotics and Automation Society - Peer Reviewer</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">ISMAR 2025</div>
+                            <div class="review-description">International Symposium on Mixed and Augmented Reality - Peer Reviewer</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">OzCHI 2025</div>
+                            <div class="review-description">Australian Computer-Human Interaction Conference - Peer Reviewer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-category fade-in">
+                    <h3>Program & Advisory Committees</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-venue">AIES Program Committee</div>
+                            <div class="review-description">AAAI/ACM Conference on AI, Ethics, and Society - Program Committee Member</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">BDAA International</div>
+                            <div class="review-description">Big Data Analytics and Applications - Program Committee Member</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">ICAIC Technical Committee</div>
+                            <div class="review-description">International Conference on AI and Computing - Technical Program Committee Member</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">ICGCET Advisory Committee</div>
+                            <div class="review-description">International Conference on Green Computing and Engineering Technologies - Advisory Committee Member</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">GAISS 2026 Advisory</div>
+                            <div class="review-description">Global AI and Security Summit - Advisory Committee Member</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">RTCSE 2025 Chair</div>
+                            <div class="review-description">Real-Time Computing and Software Engineering - Publication Committee Chair</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-category fade-in">
+                    <h3>Judging & Competition Panels</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-venue">KSU CCSE C-day Showcase</div>
+                            <div class="review-description">Kent State University Computer Science Showcase Judge</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">Globee Awards</div>
+                            <div class="review-description">International Business Awards Judge Panel</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">Official Cursor Hackathon</div>
+                            <div class="review-description">Virtual Cursor + GPT-5 Hackathon Judge</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">WUST Hackathon</div>
+                            <div class="review-description">Washington University Hackathon Judge</div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-venue">AI in Production Conference</div>
+                            <div class="review-description">Mini Conference Judging Panel</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-category fade-in review-placeholder">
+                    <h3>Future Service Activities</h3>
+                    <div class="review-list">
+                        <div class="review-item">
+                            <div class="review-venue">Coming Soon</div>
+                            <div class="review-description">Additional peer review opportunities and editorial board positions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking & Media Section -->
+    <section id="speaking" class="speaking">
+        <div class="container">
+            <h2 class="section-title fade-in">Speaking & Media</h2>
+            <p class="section-subtitle fade-in">Leading global conversations on AI innovation, security, edge computing, and ethics through keynotes, multi-session conferences, and thought leadership platforms.</p>
+            <div class="speaking-grid">
+                <div class="speaking-item fade-in">
+                    <div class="ai-risk-summit-image" style="width: 100%; height: 200px; background-image: url('AIRiskSummit.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: transparent;"></div>
+                    <div class="speaking-content">
+                        <div class="speaking-meta">
+                            <span class="speaking-type">Summit</span>
+                            <span class="speaking-date">Aug 19-20, 2025</span>
+                        </div>
+                        <h3>AI Risk Summit + CISO Forum</h3>
+                        <p class="speaking-title">"Ethical AI Practices: Balancing Innovation with Responsibility"</p>
+                        <p>Keynote presentation at SecurityWeek's premier AI and security summit, exploring frameworks for responsible AI implementation, risk mitigation strategies, and balancing innovation with ethical considerations in enterprise environments.</p>
+                        <div class="speaking-links">
+                            <a href="https://www.airisksummit.com/" class="speaking-link">Summit Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaking-item fade-in">
+                    <div class="gdai-conference-image" style="width: 100%; height: 200px; background-image: url('GDAA.png'); background-size: cover; background-position: top center; background-repeat: no-repeat; background-color: transparent;"></div>
+                    <div class="speaking-content">
+                        <div class="speaking-meta">
+                            <span class="speaking-type">Conference</span>
+                            <span class="speaking-date">Aug 22-24, 2025</span>
+                        </div>
+                        <h3>Global Data & AI Virtual Tech Conference</h3>
+                        <p class="speaking-title">Triple Session Speaker & AI Frontier Ambassador</p>
+                        <p><strong>Session 1:</strong> "Leveraging AI for Improved Requirements Engineering" - Demonstrating how NLP and ML revolutionize requirements with real IBM/Ericsson case studies.<br><br>
+                        <strong>Session 2:</strong> "AI for Compliance in Cloud Infrastructure" - Proactive GDPR/SOC 2 compliance solutions for multi-tenant environments.<br><br>
+                        <strong>Session 3:</strong> "Ethical AI Practices: Balancing Innovation with Responsibility" - Actionable frameworks achieving 40% bias reduction.</p>
+                        <div class="speaking-links">
+                            <a href="https://dataglobalhub.org" class="speaking-link">Conference Site</a>
+                            <a href="#" class="speaking-link">All Sessions</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaking-item fade-in">
+                    <div class="codeseccon-image" style="width: 100%; height: 200px; background-image: url('CodeSecCon.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: transparent;"></div>
+                    <div class="speaking-content">
+                        <div class="speaking-meta">
+                            <span class="speaking-type">Conference</span>
+                            <span class="speaking-date">Aug 12-13, 2025</span>
+                        </div>
+                        <h3>CodeSecCon 2025</h3>
+                        <p class="speaking-title">"AI-Powered Web Security: Protecting Applications from Emerging Threats"</p>
+                        <p>Exploring how artificial intelligence transforms traditional security measures through machine learning, real-time threat detection, and predictive analytics at SecurityWeek's premier security conference.</p>
+                        <div class="speaking-links">
+                            <a href="https://register.securityweek.com/codeseccon" class="speaking-link">Summit Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaking-item fade-in">
+                    <div class="ieee-symposium-image" style="width: 100%; height: 200px; background-image: url('IEEELI.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: transparent;"></div>
+                    <div class="speaking-content">
+                        <div class="speaking-meta">
+                            <span class="speaking-type">Symposium</span>
+                            <span class="speaking-date">Aug 21, 2025</span>
+                        </div>
+                        <h3>IEEE Long Island Symposium on AI in Cloud Computing</h3>
+                        <p class="speaking-title">Featured Speaker</p>
+                        <p>Presenting at the IEEE Computer Society's premier symposium on AI in Cloud Computing, sharing insights on the intersection of artificial intelligence and cloud computing technologies, addressing key challenges and opportunities in the field.</p>
+                        <div class="speaking-links">
+                            <a href="#" class="speaking-link">Symposium Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaking-item fade-in">
+                    <div class="ai2030-image" style="width: 100%; height: 200px; background-image: url('AI2030.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: transparent;"></div>
+                    <div class="speaking-content">
+                        <div class="speaking-meta">
+                            <span class="speaking-type">Podcast</span>
+                            <span class="speaking-date">2025</span>
+                        </div>
+                        <h3>AI 2030 Show</h3>
+                        <p class="speaking-title">The Future of AI in Software Engineering</p>
+                        <p>Deep dive discussion on how AI is reshaping software development practices, from requirements engineering to deployment, and the ethical considerations for responsible AI implementation in enterprise systems.</p>
+                        <div class="speaking-links">
+                            <a href="https://ai2030.org" class="speaking-link">AI2030.org</a>
+                            <a href="#" class="speaking-link">Listen Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Selected Work</h2>
+            <p class="section-subtitle fade-in">A showcase of impactful projects spanning security systems, scalable platforms, and enterprise applications.</p>
+            <div class="projects-grid">
+                <div class="project fade-in">
+                    <div class="link-preview-card" style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; transition: all 0.3s ease;">
+                        <div class="preview-image" style="width: 100%; height: 200px; background-image: url('ReportAsSecurityRisk.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                        <div class="preview-content" style="padding: 1.5rem;">
+                            <div class="preview-url" style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.5rem;">learn.microsoft.com</div>
+                            <h3 style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.8rem; color: #1e293b;">User reported message settings in Microsoft Teams</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">In organizations with Microsoft Defender for Office 365 Plan 2 or Microsoft Defender XDR, admins can decide whether users can report malicious messages in Microsoft Teams.</p>
+                            <div class="preview-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #94a3b8;">
+                                <span>Microsoft Learn Documentation</span>
+                                <span>2025-08-21</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <a href="https://learn.microsoft.com/en-us/defender-office-365/submissions-teams" class="project-link" style="color: #3b82f6; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border: 1px solid #3b82f6; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.background='#3b82f6'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#3b82f6';">View Documentation</a>
+                    </div>
+                </div>
+                <div class="project fade-in">
+                    <div class="link-preview-card" style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; transition: all 0.3s ease;">
+                        <div class="preview-image" style="width: 100%; height: 200px; background-image: url('UCToday.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                        <div class="preview-content" style="padding: 1.5rem;">
+                            <div class="preview-url" style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.5rem;">uctoday.com</div>
+                            <h3 style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.8rem; color: #1e293b;">How to Report Inappropriate Messages In Microsoft Teams</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">Maintaining Messaging Compliance - As companies spend more time in Microsoft Teams as the new "hub" for hybrid work, there's a growing need for business leaders to rethink compliance policies.</p>
+                            <div class="preview-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #94a3b8;">
+                                <span>UC Today Article</span>
+                                <span>July 11, 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <a href="https://www.uctoday.com/unified-communications/how-to-report-inappropriate-messages-in-microsoft-teams/" class="project-link" style="color: #3b82f6; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border: 1px solid #3b82f6; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.background='#3b82f6'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#3b82f6';">Read Article</a>
+                    </div>
+                </div>
+                <div class="project fade-in">
+                    <div class="link-preview-card" style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; transition: all 0.3s ease;">
+                        <div class="preview-image" style="width: 100%; height: 200px; background-image: url('Impersonation.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                        <div class="preview-content" style="padding: 1.5rem;">
+                            <div class="preview-url" style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.5rem;">support.microsoft.com</div>
+                            <h3 style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.8rem; color: #1e293b;">Prevent spam or phishing attempts from external chats in Microsoft Teams</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">When Teams detects potential spam or phishing activity from someone requesting to chat with you from outside your organization, you'll see a notification to help protect your security.</p>
+                            <div class="preview-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #94a3b8;">
+                                <span>Microsoft Support Documentation</span>
+                                <span>Teams Security</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <a href="https://support.microsoft.com/en-us/office/prevent-spam-or-phishing-attempts-from-external-chats-in-microsoft-teams-c81de898-5845-4c52-9375-33f148f987d7" class="project-link" style="color: #3b82f6; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border: 1px solid #3b82f6; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.background='#3b82f6'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#3b82f6';">View Documentation</a>
+                    </div>
+                </div>
+                <div class="project fade-in">
+                    <div class="link-preview-card" style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; transition: all 0.3s ease;">
+                        <div class="preview-image" style="width: 100%; height: 200px; background: linear-gradient(135deg, #1f2937 0%, #374151 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600; text-align: center; padding: 1rem;">
+                            SC World - Microsoft Teams Security
+                        </div>
+                        <div class="preview-content" style="padding: 1.5rem;">
+                            <div class="preview-url" style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.5rem;">scworld.com</div>
+                            <h3 style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.8rem; color: #1e293b;">Microsoft boosts security defenses in Teams</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">Coverage of Microsoft's enhanced security features in Teams, highlighting the latest improvements to protect users from spam, phishing, and impersonation attacks in the collaboration platform.</p>
+                            <div class="preview-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #94a3b8;">
+                                <span>SC World Article</span>
+                                <span>Security News</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <a href="https://www.scworld.com/brief/microsoft-boosts-security-defenses-in-teams" class="project-link" style="color: #3b82f6; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border: 1px solid #3b82f6; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.background='#3b82f6'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#3b82f6';">Read Article</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Let's Connect</h2>
+                <p class="section-subtitle fade-in">I'm always interested in discussing new opportunities, technical challenges, or potential collaborations.</p>
+                
+                <div class="contact-info fade-in">
+                    <div class="contact-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('mailto:gudur.vaishnavi@gmail.com', '_self')" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.05)'">
+                        <svg style="width: 48px; height: 48px; margin-bottom: 1rem; fill: #ea4335;" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">Email</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 0;">gudur.vaishnavi@gmail.com</p>
+                    </div>
+                    <a href="https://www.linkedin.com/in/vaishnavi-gudur/" target="_blank" style="text-decoration: none;">
+                        <div class="contact-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.05)'">
+                            <svg style="width: 48px; height: 48px; margin-bottom: 1rem; fill: #0077b5;" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">LinkedIn</h4>
+                            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">vaishnavi-gudur</p>
+                        </div>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=TeiarWMAAAAJ&hl=en&authuser=3" target="_blank" style="text-decoration: none;">
+                        <div class="contact-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.05)'">
+                            <svg style="width: 48px; height: 48px; margin-bottom: 1rem; fill: #4285f4;" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">Google Scholar</h4>
+                            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Academic Profile</p>
+                        </div>
+                    </a>
+                    <a href="https://www.webofscience.com/wos/author/record/NSU-8171-2025" target="_blank" style="text-decoration: none;">
+                        <div class="contact-item" style="text-align: center; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.05)'">
+                            <svg style="width: 48px; height: 48px; margin-bottom: 1rem; fill: #0066cc;" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">Web of Science</h4>
+                            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Research Profile</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">© 2025 Vaishnavi Gudur. All rights reserved.</div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/vaishnavi-gudur">LinkedIn</a>
+                    <a href="mailto:gudur.vaishnavi@gmail.com">Email</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Custom cursor
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor hover effects
+        const hoverElements = document.querySelectorAll('a, button, .project-image, .photo-item, .blog-post, .speaking-item, .research-item, .chapter-item, .review-category, .scroll-indicator');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Update active nav link
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionHeight = section.clientHeight;
+                if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Project image hover effect
+        document.querySelectorAll('.project-image, .photo-item, .speaking-image').forEach(img => {
+            img.addEventListener('mousemove', (e) => {
+                const rect = img.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                img.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add initial animation delay to elements
+            document.querySelectorAll('.fade-in').forEach((el, index) => {
+                el.style.transitionDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
